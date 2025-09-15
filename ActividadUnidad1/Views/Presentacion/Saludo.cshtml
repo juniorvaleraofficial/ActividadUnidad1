@@ -2,10 +2,6 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    string Nombre = "Junior Alexis";
-    string Apellido = "Valera Rijo";
-
-
-    <h1>Hola Me llamo {}</h1>
-    <h2>Matricula: <p>MT-2023-00518</p></h2>
+    <h1>Hola Me llamo @ViewBag.Nombre @ViewBag.Apellido </h1>
+    <h2>Matricula: @ViewBag.Matricula </h2>
 }
