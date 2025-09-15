@@ -21,7 +21,8 @@ namespace ActividadUnidad1.Controllers
                 }
             }
 
-            Console.WriteLine("Cantidad de vocales: " + contador);
+            // Pasamos el resultado a la vista
+            ViewBag.Resultado = "Cantidad de vocales: " + contador;
             return View();
         }
     }
