@@ -6,18 +6,21 @@ namespace ActividadUnidad1.Controllers
     {
         public IActionResult Signo()
         {
-            int numero = 0;
-            String resultado;
+            int numero = -1;
+            string resultado; 
 
             if (numero > 0)
             {
-               resultado = "El numero es positivo: ";
+                resultado = "El numero es positivo: ";
             }
-            else
+            else if (numero < 0)
             {
-               resultado = "El numero es negativo: ";
+                resultado = "El numero es negativo: ";
             }
-            ViewBag.Signo= resultado;
+            else{
+                resultado = "El numero neutro: ";
+            }
+            ViewBag.resultado = resultado;
             return View();
         }
     }
