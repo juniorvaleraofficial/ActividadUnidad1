@@ -38,6 +38,7 @@ namespace ActividadUnidad1.Controllers
             int resultado = MultiplicarEnteros(n, n2);
             ViewBag.N1 = n;
             ViewBag.N2 = n2;
+            ViewBag.Resultado = resultado;
             return View();
         }
 
