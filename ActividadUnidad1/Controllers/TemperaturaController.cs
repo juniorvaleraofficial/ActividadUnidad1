@@ -7,7 +7,7 @@ namespace ActividadUnidad1.Controllers
     {
         public IActionResult Convertir(double f = 0)
         {
-            double c = f - 32 / 1.8;
+            double c = (f - 32) / 1.8;
             double convertir = f;
             ViewBag.Fahrenheit = c;
             ViewBag.Convertir = convertir;
