@@ -1,0 +1,24 @@
+﻿@*
+@{
+    ViewData["Title"] = "Tabla";
+    int n = (int)ViewBag.Numero;
+    var filas = ViewBag.Filas as List<string>;
+}
+
+<h1>Tabla del @n</h1>
+
+<ul>
+    @foreach (var linea in filas)
+    {
+        <li>@linea</li>
+    }
+</ul>
+*@
+@{
+    ViewData["Title"] = "Convertir";
+    double Conversion = ViewBag.Fahrenheid;
+    double n = (double)ViewBag.Convertir;
+
+}
+<h1>Convertir @n Fahrenheid a Celcius</h1>
+<h2>Resultado = @Conversion</h2>
