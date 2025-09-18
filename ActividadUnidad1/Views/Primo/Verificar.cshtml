@@ -1,23 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Numero Primo";
-    bool tieneValor = ViewBag.N != null;
-}
-
-<h1>Comprobar número primo</h1>
-
-<form asp-action="Primo" method="get">
-    <label for="n">Número:</label>
-    <input id="n" name="n" type="number" min="0" required />
-    <button type="submit">Comprobar</button>
-</form>
-
-@if (tieneValor)
-{
-    var n = (int)ViewBag.N;
+    ViewData["Title"] = "Primo";
+    int n = (int)ViewBag.N;
     bool esPrimo = (bool)ViewBag.EsPrimo;
-
-    <h2>Resultado</h2>
-    <p>
-        @n @((esPrimo) ? "es primo" : "no es primo")
-    </p>
 }
+
+<h1>¿@n es primo?</h1>
+<p>@n @((esPrimo) ? "sí es primo" : "no es primo").</p>
