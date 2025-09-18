@@ -7,10 +7,13 @@ namespace ActividadUnidad1.Controllers
     {
         public IActionResult Convertir(double f = 0)
         {
+            // Corrección: paréntesis correctos
             double c = (f - 32) / 1.8;
-            double convertir = f;
-            ViewBag.Fahrenheit = c;
-            ViewBag.Convertir = convertir;
+
+            // Guardar correctamente en el ViewBag
+            ViewBag.Fahrenheit = f;
+            ViewBag.Celsius = c;
+
             return View();
         }
     }
