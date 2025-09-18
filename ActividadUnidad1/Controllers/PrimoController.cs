@@ -3,35 +3,26 @@ using System;
 
 namespace ActividadUnidad1.Controllers
 {
+    [Route("[controller]")] // => "Operaciones"
     public class PrimoController : Controller
     {
-        // --- Lógica ---
-        private bool EsPrimo(int n)
+        private static bool EsPrimo(int n)
         {
             if (n < 2) return false;
             if (n % 2 == 0) return n == 2;
-
             int limite = (int)Math.Sqrt(n);
             for (int i = 3; i <= limite; i += 2)
                 if (n % i == 0) return false;
-
             return true;
         }
 
-        //Operaciones/Primo?n=7 
-        [HttpGet]
-        public IActionResult Verificar(int? n)
+        //Operaciones/Primo/7  (n debe ser entero)
+        [HttpGet("Primo/{n:int}")]
+        public IActionResult Verificar(int n)
         {
-            if (n.HasValue)
-            {
-                ViewBag.N = n.Value;
-                ViewBag.EsPrimo = EsPrimo(n.Value);
-            }
+            ViewBag.N = n;
+            ViewBag.EsPrimo = EsPrimo(n);
             return View();
         }
-
-        //Operaciones/Primo/7
-        [HttpGet("Operaciones/Primo/{n:int?}")]
-        public IActionResult PrimoConRuta(int? n) => Verificar(n);
     }
 }
