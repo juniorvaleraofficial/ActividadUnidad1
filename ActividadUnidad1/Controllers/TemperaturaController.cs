@@ -11,7 +11,8 @@ namespace ActividadUnidad1.Controllers
             double c = (f - 32) / 1.8;
 
             // Guardar correctamente en el ViewBag
-            ViewBag.Fahrenheit = f;
+            double n = f;
+            ViewBag.Fahrenheit = n;
             ViewBag.Celsius = c;
 
             return View();
