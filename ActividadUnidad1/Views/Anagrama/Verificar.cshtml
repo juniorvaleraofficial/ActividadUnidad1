@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Verificar Anagrama";
+    var a = ViewBag.A as string;
+    var b = ViewBag.B as string;
+    bool? es = ViewBag.EsAnagrama as bool?;
+    var error = ViewBag.Error as string;
+}
+
+<h1>Verificar anagrama</h1>
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <div class="alert alert-warning">@error</div>
+    <p>Ejemplos:</p>
+    <ul>
+        <li>/Anagrama/Verificar?a=Roma&b=Amor</li>
+        <li>/Anagrama/Verificar/roma/amor</li>
+    </ul>
+}
+else
+{
+    <p><strong>A:</strong> @a</p>
+    <p><strong>B:</strong> @b</p>
+    <h3>
+        @(es == true ? "Son anagramas ✅" : "No son anagramas ❌")
+    </h3>
+}
