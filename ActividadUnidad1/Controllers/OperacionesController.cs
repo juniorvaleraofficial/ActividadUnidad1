@@ -8,6 +8,7 @@ namespace ActividadUnidad1.Controllers
         private int SumarEnteros(int a, int b) => a + b;
         private int RestarEnteros(int a, int b) => a - b;
         private int MultiplicarEnteros(int a, int b) => a * b;
+        private int ResiduoEnteros(int a, int b) => a % b;
 
         //Operaciones/Sumar?n=5&n2=7
         [HttpGet]
@@ -36,6 +37,15 @@ namespace ActividadUnidad1.Controllers
         public IActionResult Multiplicar(int n = 0, int n2 = 0)
         {
             int resultado = MultiplicarEnteros(n, n2);
+            ViewBag.N1 = n;
+            ViewBag.N2 = n2;
+            ViewBag.Resultado = resultado;
+            return View();
+        }
+
+        public IActionResult Residuo( int n = 0, int n2 = 0)
+        {
+            int resultado = ResiduoEnteros(n, n2);
             ViewBag.N1 = n;
             ViewBag.N2 = n2;
             ViewBag.Resultado = resultado;
