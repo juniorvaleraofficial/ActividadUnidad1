@@ -4,16 +4,16 @@ namespace ActividadUnidad1.Controllers
 {
     public class NumeroTablaController : Controller
     {
-        [HttpGet("NumeroTabla/Tabla/{a:int}")]
-        public IActionResult Tabla(int a = 0)
+        public IActionResult Tabla(int id = 0) // ahora /NumeroTabla/Tabla/10 enlaza a id
         {
-            int resultado = 0;
+            var filas = new List<string>();
             for (int i = 1; i <= 10; i++)
-            {
-                resultado = a * i;
-            }
-            ViewBag.resultado = resultado;
+                filas.Add($"{id} × {i} = {id * i}");
+
+            ViewBag.Numero = id;
+            ViewBag.Filas = filas;
             return View();
         }
+
     }
 }
