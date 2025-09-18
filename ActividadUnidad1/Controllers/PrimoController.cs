@@ -17,8 +17,7 @@ namespace ActividadUnidad1.Controllers
         }
 
         //Operaciones/Primo/7  (n debe ser entero)
-        [HttpGet("Primo/{n:int}")]
-        [HttpGet]
+        [HttpGet("Verificar/{n:int}")]
         public IActionResult Verificar(int n)
         {
             ViewBag.N = n;
