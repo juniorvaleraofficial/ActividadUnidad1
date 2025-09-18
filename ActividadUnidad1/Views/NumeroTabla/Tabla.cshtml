@@ -1,10 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Tabla";
-    int a = (int)ViewBag.Resultado;
+    int n = (int)ViewBag.Numero;
+    var filas = ViewBag.Filas as List<string>;
 }
-<h1>@a</h1>
 
-<p>Prueba:</p>
+<h1>Tabla del @n</h1>
+
 <ul>
-    <li><a href="/NumeroTabla/Tabla/10">/NumeroTabla/Tabla/10</a></li>
+    @foreach (var linea in filas)
+    {
+        <li>@linea</li>
+    }
 </ul>
