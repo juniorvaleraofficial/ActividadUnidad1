@@ -20,6 +20,10 @@ namespace ActividadUnidad1.Controllers
                 ViewBag.EsSegura = false;
                 return View();
             }
+
+            bool tieneMayus = false;
+            bool tieneMinus = false;
+            bool tieneNumero = false;
         }
 
     }
