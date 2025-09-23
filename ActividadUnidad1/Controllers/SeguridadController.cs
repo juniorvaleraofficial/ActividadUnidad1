@@ -24,6 +24,18 @@ namespace ActividadUnidad1.Controllers
             bool tieneMayus = false;
             bool tieneMinus = false;
             bool tieneNumero = false;
+
+            int largo = clave.Length;
+
+            foreach (char c in clave)
+            {
+                if (char.IsUpper(c)) tieneMayus = true;
+                if (char.IsLower(c)) tieneMinus = true;
+                if (char.IsDigit(c)) tieneNumero = true;
+            }
+
+            bool cumpleLargo = largo >= 8;
+            bool esSegura = cumpleLargo && tieneMayus && tieneMinus && tieneNumero;
         }
 
     }
