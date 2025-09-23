@@ -1,3 +1,12 @@
 ﻿@{
-    ViewBag.Title["Titulo"] = "Correo usuario";
+    ViewBag.Title = "Usuario de correo";
+}
+
+<h2>Obtener nombre de usuario</h2>
+
+@using (Html.BeginForm("Usuario", "Correo", FormMethod.Get, new { id = "formBasico" }))
+{
+    <label for="email">Correo electrónico:</label><br />
+    <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required style="width:320px; padding:.5rem;" />
+    <button type="submit" style="padding:.5rem 1rem; margin-top:.5rem;">Procesar (básico)</button>
 }
