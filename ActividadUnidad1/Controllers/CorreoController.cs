@@ -5,7 +5,6 @@ namespace ActividadUnidad1.Controllers
 {
     public class CorreoController : Controller
     {
-       
         public ActionResult Usuario(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -13,7 +12,10 @@ namespace ActividadUnidad1.Controllers
                 return Content("No se recibió un correo válido.");
             }
 
-            
+            string[] partes = email.Split('@');
+            string nombreUsuario = partes[0];
+
+            return Content("El nombre de usuario es: " + nombreUsuario);
         }
     }
 }
