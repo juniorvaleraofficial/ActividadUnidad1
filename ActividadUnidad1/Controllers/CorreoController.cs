@@ -14,7 +14,7 @@ namespace ActividadUnidad1.Controllers
 
             string[] partes = email.Split('@');
             string nombreUsuario = partes[0];
-            return View("El nombre de usuario es: " + nombreUsuario);
+            return Content("El nombre de usuario es: " + nombreUsuario);
         }
     }
 }
