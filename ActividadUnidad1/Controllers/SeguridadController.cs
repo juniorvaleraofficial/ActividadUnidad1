@@ -36,6 +36,25 @@ namespace ActividadUnidad1.Controllers
 
             bool cumpleLargo = largo >= 8;
             bool esSegura = cumpleLargo && tieneMayus && tieneMinus && tieneNumero;
+
+            if (esSegura)
+            {
+                ViewBag.Resultado = "Contraseña Segura: ";
+                ViewBag.EsSegura = true;
+            }
+            else
+            {
+                string faltantes = "";
+                if (!cumpleLargo) faltantes += "• Tener al menos 8 caracteres\n";
+                if (!tieneMayus) faltantes += "• Incluir al menos 1 mayúscula\n";
+                if (!tieneMinus) faltantes += "• Incluir al menos 1 minúscula\n";
+                if (!tieneNumero) faltantes += "• Incluir al menos 1 número\n";
+
+                ViewBag.Resultado = "Contraseña NO segura. Revisa:\n" + faltantes;
+                ViewBag.EsSegura = false;
+            }
+
+            return View();
         }
 
     }
